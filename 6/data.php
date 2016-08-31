@@ -1,27 +1,28 @@
 <?php
+require_once ("connection.php");
 
-
-function addPOST ($text)
+function db_addPOST ($text)
 {
     
    //exit;
-    $mysqli = new mysqli ("localhost","root","","epic");
-    $mysqli->query("INSERT INTO `messages`(`name`) VALUES ('$text') ");
+    $db = connection();
+   // $mysqli = new mysqli ("localhost","root","","epic");
+    // $mysqli->query("INSERT INTO `messages`(`name`) VALUES ('$text') ");
+    
+    $statement = $db -> prepare ("INSERT INTO `messages` (`name`) VALUES ('$text') ");
+    $statemtny -> execute ([ $_GET ['id']]);
     return ($mysqli->error == NULL) ? true : $mysqli->error;
 }
 
-/* function getPOSTs ()
+function getPOSTs ()
 {
-    $mysqli = new mysqli ("localhost","root","","epic");
-    $result = $mysqli ->query ("SELECT * FROM `messages`");
-    $data = [];
-    while ($row=$result -> fetch_array (MYSQLI_ASSOC))
-    {
-        $data[] = $row;
-    }
-return $data;
-}
-*/
+    $db = connection();
+    
+    $result = $db->query("SELECT * FROM `messages`");
+    $data =$result->fetchAll();
+    
+    return $data;
+} 
 
 function removePOST ($id)
 {

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> <?php $name ?> </title>
+    <meta name "Description" content "Сайт о современных маркетинговых технологиях">
+    <meta charset="utf-8">
+    <meta name "Keywords" content="Web-marketing, маркетинг, искусство продаж ">
+    <meta http-equiv="Content-type" content= text/html >
+</head>
+<body>
+    <h1> Тут представлены записи блога </h1>
+    
+    
+    
+    
+    
+    
+</body>
+
+</html>
